@@ -1,6 +1,6 @@
 const path = require('path');
 
-exports.createPages = ({ graphql, actions}) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -8,9 +8,12 @@ exports.createPages = ({ graphql, actions}) => {
       graphql(
         `
           {
+            # Alias the queries
+
+            # Blog posts
             allPosts: allMarkdownRemark(
-            filter: {frontmatter: {type: {eq: "post"}}},
-            sort: {fields: frontmatter___date, order: DESC},
+              filter: { frontmatter: { type: { eq: "post" } } }
+              sort: { fields: frontmatter___date, order: DESC }
             ) {
               edges {
                 node {
@@ -32,9 +35,9 @@ exports.createPages = ({ graphql, actions}) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
-          reject(result.errors)
+          reject(result.errors);
         }
         const allPosts = result.data.allPosts.edges;
         const groupedPosts = result.data.allPosts.group;
@@ -51,10 +54,10 @@ exports.createPages = ({ graphql, actions}) => {
               limit: postsPerPage,
               skip: i * postsPerPage,
               nextPage: `/blog/${i + 2}`,
-              pageNumber: i + 1,
+              pageNumber: i + 1
             }
-          })
-        })
+          });
+        });
 
         // Creating all category pages.
         let category;
@@ -73,11 +76,11 @@ exports.createPages = ({ graphql, actions}) => {
                 skip: i * postsPerPage,
                 nextPage: `/${category}/${i + 2}`,
                 pageNumber: i + 1,
-                category: category,
+                category: category
               }
-            })
-          })
-        })
+            });
+          });
+        });
 
         // Create all the blog post pages.
         const template = path.resolve('src/blog/post.js');
@@ -87,11 +90,11 @@ exports.createPages = ({ graphql, actions}) => {
             path: slug,
             component: template,
             context: {
-              slug,
+              slug
             }
-          })
-        })
+          });
+        });
       })
-    )
-  })
-}
+    );
+  });
+};
