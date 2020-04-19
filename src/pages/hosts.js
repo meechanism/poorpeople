@@ -8,12 +8,12 @@ export default ({ props, data }) => {
   const desc = `Hosts of ${data.site.siteMetadata.title}`;
   const people = data.allMarkdownRemark.edges;
 
-  const hosts = people.map((person) => {
+  const hosts = people.map((person, i) => {
     const personData = person.node;
-    console.log('*****************', personData.frontmatter);
-
     return (
-      <div class="flex flex-wrap items-start justify-center mv6">
+      <div
+        key={`host-${i}`}
+        class="flex flex-wrap items-start justify-center mv6">
         <Img
           fluid={personData.frontmatter.postImage.childImageSharp.fluid}
           alt="The Author"
@@ -32,8 +32,8 @@ export default ({ props, data }) => {
   return (
     <Layout>
       <Seo title={desc} description={desc} />
-      <div className="relative pa4 tc bg-white">
-        <h1 className="f-subheadline lh-title">{desc}</h1>
+      <div className="pv5 flex items-center justify-center bg-white">
+        <h1 className="fw1 tc f2 display">{desc}</h1>
       </div>
       {hosts}
     </Layout>
