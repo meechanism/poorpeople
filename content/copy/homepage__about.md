@@ -1,11 +1,9 @@
 ---
-
-type: "copy"
-name: "homepage__bio"
-title: "Showcase Your Personality."
-
+type: 'copy'
+name: 'homepage__bio'
+title: 'Showcase Your Personality.'
 ---
 
-Your incredible content deserves an incredible home. Tyra leverages your brilliant blog posts, builds rich SEO data, and makes publishing easy! Fast, dynamic websites are here, powered by Gatsby.js and React.
+Turkey beef ribs rump, kevin biltong tongue drumstick. Prosciutto biltong short loin, flank frankfurter drumstick ground round picanha ribeye turducken tongue tri-tip sirloin. Tri-tip strip steak leberkas, short ribs turducken kevin sausage cupim turkey pork spare ribs filet mignon.
 
-This section of the site would be great to feature an author's biography, or maybe a bit about what makes your business special! It's featured towards the end of the homepage, after other descriptive sections.
+Pork t-bone meatball, ham pig shankle salami boudin turducken ribeye turkey chuck fatback flank.

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
 import About from '../homepage/components/about';
-import Bio from '../homepage/components/bio';
+// import Bio from '../homepage/components/bio';
 import Seo from '../common/seo';
 
 export default ({ data }) => {
@@ -15,6 +15,7 @@ export default ({ data }) => {
         title={'Home Page'}
         description={data.site.siteMetadata.description}
       />
+      <About />
       <Hero
         title={post.frontmatter.title}
         image={post.frontmatter.postImage.childImageSharp.fluid}
@@ -31,8 +32,7 @@ export default ({ data }) => {
           />
         ))}
       </div>
-      <About />
-      <Bio />
+      {/* <Bio /> */}
     </Layout>
   );
 };

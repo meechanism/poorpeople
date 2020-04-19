@@ -27,9 +27,9 @@ yarn build
 
 ## Adding your Content
 
-This project uses markdown for writing blog posts, and follows a simple template for adding new posts.
+This project uses markdown for writing episode posts, and follows a simple template for adding new posts.
 
-To add a new blog post, create a file `filename.md` in `content/posts/` with the following:
+To add a new episode post, create a file `filename.md` in `content/posts/` with the following:
 
 ```markdown
 ---

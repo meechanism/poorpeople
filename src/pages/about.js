@@ -32,11 +32,6 @@ export default ({ props, data }) => (
           className="db bg-dark-gray b near-white hover-bg-mid-gray pv3 ph4 ttu tracked sans-serif no-underline mv2">
           Meet the Hosts
         </Link>
-        <Link
-          to="/blog"
-          className="db bg-dark-gray b near-white hover-bg-mid-gray pv3 ph4 ttu tracked sans-serif no-underline mv2">
-          Read the blog
-        </Link>
       </div>
       <div
         className="mw7 w-100 lh-copy serif pa3 flex flex-column justify-center f4"

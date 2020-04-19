@@ -14,13 +14,16 @@ export default ({ props, data }) => {
       <div
         key={`host-${i}`}
         class="flex flex-wrap items-start justify-center mv6">
-        <Img
-          fluid={personData.frontmatter.postImage.childImageSharp.fluid}
-          alt="The Author"
-          className="w-20 mh3"
-        />
-        <div class="mw7 w-80 mh3 lh-copy serif flex flex-column justify-center f4">
-          <h2 class="f2 lh-title">{personData.frontmatter.name}</h2>
+        <div class="w-100 mh3 mw5 pa4 bg-white">
+          <Img
+            fluid={personData.frontmatter.postImage.childImageSharp.fluid}
+            alt={`Photo of ${personData.frontmatter.name}`}
+          />
+        </div>
+        <div class="mw7 mh2 lh-copy serif flex flex-column justify-center f4">
+          <h2 class="f2 lh-title bg-navy pv3 ph4 near-white">
+            {personData.frontmatter.name}
+          </h2>
           <div
             class="lh-copy serif"
             dangerouslySetInnerHTML={{ __html: personData.html }}

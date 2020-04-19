@@ -10,13 +10,13 @@ export default () => (
     <Helmet>
       <meta name="robots" content="noindex, nofollow" />
     </Helmet>
-    <div className="bg-washed-red pv5 flex flex-column items-center">
+    <div className="bg-white pv5 flex flex-column items-center">
       <h1 className="db f1 display fw1">Privacy Policy</h1>
       <p className="db sans-serif f5 tracked ttu tc">
         Effective date: December 19, 2018
       </p>
     </div>
-    <div className="lh-copy f4 serif mw8 center">
+    <div className="lh-copy f4 serif mw8 center mv5 ph4">
       <p>
         Poor People ("us", "we", or "our") operates the Poor People Podcast
         website (the "Service").
@@ -253,7 +253,7 @@ export default () => (
         If you have any questions about this Privacy Policy, please contact us:
       </p>
       <ul>
-        <li>By email: madelyn [dot] eriksen@gmail.com</li>
+        <li>By email: poorpeoplepodcast [at] gmail [dot] com</li>
       </ul>
     </div>
   </Layout>

@@ -3,7 +3,7 @@ module.exports = {
     navbarLinks: [
       { to: '/about', name: 'about' },
       { to: '/episodes', name: 'episodes' },
-      { to: '/blog', name: 'blog' }
+      { to: '/contact', name: 'contact' }
     ],
     title: 'Poor People',
     description:

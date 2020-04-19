@@ -33,13 +33,13 @@ const SliderMenu = (props) => {
   return (
     <div
       className={
-        'flex flex-column justify-center items-center bg-washed-red fixed top z-max w-100 ease' +
+        'flex flex-column justify-center items-center bg-navy fixed top z-max w-100 ease' +
         (props.active ? ' vh-93' : ' h0')
       }>
       <Link
         to="/"
         className={
-          'display ttu tracked dark-gray f3 no-underline menu__item pv5' +
+          'display ttu tracked white f3 no-underline menu__item pv5' +
           extraClasses
         }>
         {props.siteTitle}
@@ -48,20 +48,12 @@ const SliderMenu = (props) => {
         <MultiLink
           to={navLink.to}
           className={
-            'sans-serif ttu mid-gray f5 no-underline menu__item pv3' +
+            'sans-serif ttu near-white f5 no-underline menu__item mv3 pv2 ph4 ba b--near-white dim hover-yellow' +
             extraClasses
           }>
           {navLink.name}
         </MultiLink>
       ))}
-      <Link
-        to="/about"
-        className={
-          'sans-serif ttu mid-gray f5 no-underline menu__item pv3' +
-          extraClasses
-        }>
-        About
-      </Link>
     </div>
   );
 };
@@ -104,7 +96,7 @@ export default class Navbar extends React.Component {
             <div
               className="bg-white flex w-100 vh-7 pv3 flex justify-between items-center top-0 z-999 bb b--light-gray"
               style={{ position: 'sticky' }}>
-              <div className="w-100 mw8 flex justify-between justify-around-l items-center ph4 pa2-ns">
+              <div className="w-100 mw8 flex justify-between  items-center ph2 pa2-ns">
                 <button
                   className="ttu tracked dark-gray f4 no-underline bn bg-transparent pointer"
                   onClick={this.toggleMenu}>
@@ -123,7 +115,7 @@ export default class Navbar extends React.Component {
                 {data.site.siteMetadata.navbarLinks.map((navLink) => (
                   <MultiLink
                     to={navLink.to}
-                    className="sans-serif ttu mid-gray f5 no-underline dn dib-l">
+                    className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover-gold">
                     {navLink.name}
                   </MultiLink>
                 ))}

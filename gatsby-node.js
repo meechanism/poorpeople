@@ -10,7 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
           {
             # Alias the queries
 
-            # Blog posts
+            # Episode posts
             allPosts: allMarkdownRemark(
               filter: { frontmatter: { type: { eq: "post" } } }
               sort: { fields: frontmatter___date, order: DESC }
@@ -41,19 +41,19 @@ exports.createPages = ({ graphql, actions }) => {
         }
         const allPosts = result.data.allPosts.edges;
         const groupedPosts = result.data.allPosts.group;
-        const paginationTemplate = path.resolve('src/blog/index.js');
+        const paginationTemplate = path.resolve('src/episodes/index.js');
         const postsPerPage = 10;
         let numPages = Math.ceil(allPosts.length / postsPerPage);
 
-        // Creating the main blog index
+        // Creating the main episode index
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
-            path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+            path: i === 0 ? '/episodes' : `/episodes/${i + 1}`,
             component: paginationTemplate,
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
-              nextPage: `/blog/${i + 2}`,
+              nextPage: `/episodes/${i + 2}`,
               pageNumber: i + 1
             }
           });
@@ -62,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Creating all category pages.
         let category;
         let categoryPosts;
-        const categoryTemplate = path.resolve('src/blog/category.js');
+        const categoryTemplate = path.resolve('src/episodes/category.js');
         groupedPosts.forEach((group, _) => {
           category = group.fieldValue;
           categoryPosts = group.edges;
@@ -82,8 +82,8 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        // Create all the blog post pages.
-        const template = path.resolve('src/blog/post.js');
+        // Create all the episodes post pages.
+        const template = path.resolve('src/episodes/post.js');
         allPosts.forEach(({ node }) => {
           let slug = node.frontmatter.slug;
           createPage({

@@ -6,23 +6,23 @@ import Preview from './components/post-preview.js';
 import Seo from '../common/seo';
 import 'tachyons';
 
-export default class BlogIndex extends React.Component {
+export default class EpisodeIndex extends React.Component {
   render() {
     const posts = this.props.data.posts.edges;
     const hasNext = this.props.data.posts.pageInfo.hasNextPage;
     return (
       <Layout>
         <Seo
-          title={`All Blog Posts - Page ${this.props.pageContext.pageNumber}`}
-          description={`Index of all blog posts. Page ${this.props.pageContext.pageNumber}`}
+          title={`All Episodes - Page ${this.props.pageContext.pageNumber}`}
+          description={`Index of all episodes. Page ${this.props.pageContext.pageNumber}`}
         />
         <div className="pv5 flex items-center justify-center bg-white">
-          <h1 className="fw1 tc f2 display">All Blog Posts</h1>
+          <h1 className="fw1 tc f2 display">All Episodes</h1>
         </div>
         <div className="mw9 center">
           <Breadcrumbs
-            lastName="Blog"
-            lastPath="/blog"
+            lastName="Episodes"
+            lastPath="/episodes"
             currentPage={`Page ${this.props.pageContext.pageNumber}`}
           />
           {posts.map(({ node }) => (
@@ -50,7 +50,7 @@ export default class BlogIndex extends React.Component {
   }
 }
 
-export const blogListQuery = graphql`
+export const episodeListQuery = graphql`
   query posts($skip: Int!, $limit: Int!) {
     posts: allMarkdownRemark(
       filter: { frontmatter: { type: { eq: "post" } } }

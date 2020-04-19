@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import 'tachyons';
 
 export default (props) => (
-  <div className="bg-light-gray ph2 pv5 flex flex-column justify-center items-center">
+  <div className="bg-gold ph2 pv5 flex flex-column justify-center items-center">
     <Link
       to={`/${props.category}`}
       className="sans-serif ttu mid-gray tracked f6">

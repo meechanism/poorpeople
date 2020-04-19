@@ -14,16 +14,16 @@ export default () => (
       }
     `}
     render={(data) => (
-      <div className="bg-washed-red flex flex-column justify-center items-center pa2 pv5">
-        <h1 className="fw1 display db dark-gray f2 tc">
+      <div className="bg-navy flex flex-column justify-center items-center ph3 pv5">
+        <h1 className="fw1 display db near-white f2 tc">
           {data.site.siteMetadata.homepageHeader}
         </h1>
-        <p className="f4 serif mw7 tc lh-copy">
+        <p className="f4 serif mw7 tc lh-copy lightest-blue">
           {data.site.siteMetadata.homepageAbout}
         </p>
         <Link
           to="/about"
-          className="mt3 db no-underline ph5 pv3 sans-serif near-white bg-dark-gray ttu tracked b hover-bg-mid-gray">
+          className="mt3 db no-underline ph5 pv3 sans-serif navy bg-yellow ttu tracked b hover-bg-gold">
           Learn More
         </Link>
       </div>
