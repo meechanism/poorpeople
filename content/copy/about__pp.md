@@ -1,7 +1,7 @@
 ---
 type: 'copy'
 name: 'about__pp'
-title: 'Poor People is a platform for new generation people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.'
+title: 'Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.'
 ---
 
 The concept sparked during a passionate argument about the failing United States economy and lack of economic and health safety nets during the COVID19 crisis. Jackie and Mee have been sharing angry political and economic dialog for years and have finally had _enough_. The more they talked, the more they realized they had similar backgrounds and were bouncing many of the same thoughts off each other.
@@ -18,16 +18,15 @@ What does it mean to be successful? What is the balance between old traditions a
 
 Our conversations attempt to extract and discuss a lot of these questions that haunted us as kids and the new ones we tackle as first and second-generation Asian American adults.
 
-## Values
-
-- Provide progressive conversations and views in today's economic environment
-- Challenge traditional views imposed on us by our immigrant roots by disrupting the status quo and tearing down barriers we face
-- Build a safe space for people to share their experience and voices
+<div class="bg-gold ph4 pt1 pb4 navy">
+    <h2>Values</h2>
+    <ul>
+        <li>Provide progressive conversations and views in today's economic environment</li>
+        <li>Challenge traditional views imposed on us by our immigrant roots by disrupting the status quo and tearing down barriers we face</li>
+        <li>Build a safe space for people to share their experience and voices</li>
+    </ul>
+</div>
 
 ## Audience
 
 The information and discussions are open to anyone of any social-economic background, race, and ethnicity. Even if we discuss our topics with a POC point of view, we attempt to keep dialog and solutions as thoughtful as possible.
-
-## Contact
-
-If you have any comments, suggestions, concerns, topics, or anything else you would like to discuss, please contact us.

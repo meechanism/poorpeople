@@ -7,11 +7,11 @@ module.exports = {
     ],
     title: 'Poor People',
     description:
-      'Poor People is a platform for new generation people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
+      'Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
     siteUrl: 'https://poor-people.netlify.com',
     homepageHeader: 'Poor People Podcast',
     homepageAbout:
-      'Poor People is a platform for new generation people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
+      'Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
     mailChimpUrl:
       'https://gmail.us4.list-manage.com/subscribe/post?u=1d6dfdbdc85da3734b4c7a9ec&amp;id=322edcc0bc',
     mailChimpToken: 'b_1d6dfdbdc85da3734b4c7a9ec_322edcc0bc',

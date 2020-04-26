@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Breadcrumbs from './components/breadcrumbs';
 import Preview from './components/post-preview.js';
 import Seo from '../common/seo';
+import Header from '../common/components/header';
 import 'tachyons';
 
 export default class EpisodeIndex extends React.Component {
@@ -16,9 +17,8 @@ export default class EpisodeIndex extends React.Component {
           title={`All Episodes - Page ${this.props.pageContext.pageNumber}`}
           description={`Index of all episodes. Page ${this.props.pageContext.pageNumber}`}
         />
-        <div className="pv5 flex items-center justify-center bg-white">
-          <h1 className="fw1 tc f2 display">All Episodes</h1>
-        </div>
+        <Header>All Episodes</Header>
+
         <div className="mw9 center">
           <Breadcrumbs
             lastName="Episodes"

@@ -3,43 +3,63 @@ import Layout from '../common/layouts';
 import Img from 'gatsby-image';
 import { graphql, Link } from 'gatsby';
 import Seo from '../common/seo';
+import Header from '../common/components/header';
 
-export default ({ props, data }) => (
-  <Layout>
-    <Seo
-      title={`About ${data.site.siteMetadata.title}`}
-      description={data.markdownRemark.frontmatter.title}
-    />
-    <div className="relative">
-      <Img fluid={data.banner.childImageSharp.fluid} />
-      <h1
-        className="fw1 tc f2 display absolute dn dib-ns"
-        style={{
-          bottom: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)'
-        }}>
-        About {data.site.siteMetadata.title}
-      </h1>
-    </div>
-    <div className="mw9 center flex flex-wrap pv5-l w-100">
-      <div className="mw7 w-100 pa3">
-        <h1 className="display fw1 db lh-copy">
-          {data.markdownRemark.frontmatter.title}
-        </h1>
-        <Link
-          to="/hosts"
-          className="db bg-dark-gray b near-white hover-bg-mid-gray pv3 ph4 ttu tracked sans-serif no-underline mv2">
-          Meet the Hosts
-        </Link>
-      </div>
+export default ({ props, data }) => {
+  const people = data.allMarkdownRemark.edges;
+
+  const hosts = people.map((person, i) => {
+    const personData = person.node;
+    return (
       <div
-        className="mw7 w-100 lh-copy serif pa3 flex flex-column justify-center f4"
-        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        key={`host-${i}`}
+        class="flex flex-wrap items-start justify-center mv4">
+        <div class="w-100 mh3 mw5 pa4 bg-near-white">
+          <Img
+            fluid={personData.frontmatter.postImage.childImageSharp.fluid}
+            alt={`Photo of ${personData.frontmatter.name}`}
+          />
+        </div>
+        <div class="mw7 mh2 lh-copy serif flex flex-column justify-center f4">
+          <h2 class="f2 lh-title ">{personData.frontmatter.name}</h2>
+          <div
+            class="lh-copy serif"
+            dangerouslySetInnerHTML={{ __html: personData.html }}
+          />
+        </div>
+      </div>
+    );
+  });
+
+  return (
+    <Layout>
+      <Seo
+        title={`About ${data.site.siteMetadata.title}`}
+        description={data.markdownRemark.frontmatter.title}
       />
-    </div>
-  </Layout>
-);
+      <Header>About {data.site.siteMetadata.title}</Header>
+
+      <div className="mv4 center pa3 w-70-l w-100">
+        <p className="f2-l display tc fw1 db lh-copy f3">
+          {data.markdownRemark.frontmatter.title}
+        </p>
+      </div>
+
+      <div className="mw9 center flex flex-wrap items-start">
+        <div className="w-50-l w-100 pa4 bg-white mb4">
+          <h2 className="bg-navy near-white pv3 ph4 ttu sans-serif no-underline mv2">
+            Meet the Hosts
+          </h2>
+          {hosts}
+        </div>
+        <div
+          className="w-50-l  w-100 h-copy serif pa4 f4 lh-copy"
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+      </div>
+    </Layout>
+  );
+};
 
 export const dataQuery = graphql`
   query {
@@ -52,6 +72,27 @@ export const dataQuery = graphql`
       html
       frontmatter {
         title
+      }
+    }
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "host" } } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            name
+            title
+            postImage {
+              childImageSharp {
+                original {
+                  src
+                }
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
     banner: file(relativePath: { eq: "img/about__banner.jpg" }) {

@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
 import About from '../homepage/components/about';
-// import Bio from '../homepage/components/bio';
 import Seo from '../common/seo';
 
 export default ({ data }) => {
