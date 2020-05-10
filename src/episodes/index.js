@@ -27,6 +27,7 @@ export default class EpisodeIndex extends React.Component {
           />
           {posts.map(({ node }) => (
             <Preview
+              key={node.frontmatter.slug}
               fluidImage={node.frontmatter.postImage.childImageSharp.fluid}
               slug={node.frontmatter.slug}
               title={node.frontmatter.title}
