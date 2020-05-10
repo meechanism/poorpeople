@@ -11,7 +11,7 @@ module.exports = {
     siteUrl: 'https://poor-people.netlify.com',
     homepageHeader: 'Poor People Podcast',
     homepageAbout:
-      'Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
+      'Poor People is a platform for people of color to xdiscuss their socioeconomic backgrounds and to share stories and financial experiences of today.',
     mailChimpUrl:
       'https://gmail.us4.list-manage.com/subscribe/post?u=1d6dfdbdc85da3734b4c7a9ec&amp;id=322edcc0bc',
     mailChimpToken: 'b_1d6dfdbdc85da3734b4c7a9ec_322edcc0bc',
@@ -25,9 +25,30 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1400
+            }
+          }
+        ]
+      }
+    },
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content`,
+        name: 'content'
+      }
+    },
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -79,27 +100,6 @@ module.exports = {
           `,
             output: '/rss.xml',
             title: 'Gatsby RSS Feed'
-          }
-        ]
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content`,
-        name: 'content'
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          'gatsby-remark-copy-linked-files',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1400
-            }
           }
         ]
       }
