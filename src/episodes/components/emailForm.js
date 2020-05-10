@@ -30,7 +30,7 @@ export default (props) => (
             placeholder="Your Email"
           />
           <input
-            class="dn"
+            className="dn"
             type="text"
             name={data.site.siteMetadata.mailChimpToken}
             tabindex="-1"

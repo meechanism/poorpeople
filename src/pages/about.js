@@ -13,17 +13,17 @@ export default ({ props, data }) => {
     return (
       <div
         key={`host-${i}`}
-        class="flex flex-wrap items-start justify-center mv4">
-        <div class="w-100 mh3 mw5 pa4 bg-near-white">
+        className="flex flex-wrap items-start justify-center mv4">
+        <div className="w-100 mh3 mw5 pa4 bg-near-white">
           <Img
             fluid={personData.frontmatter.postImage.childImageSharp.fluid}
             alt={`Photo of ${personData.frontmatter.name}`}
           />
         </div>
-        <div class="mw7 mh2 lh-copy serif flex flex-column justify-center f4">
-          <h2 class="f2 lh-title ">{personData.frontmatter.name}</h2>
+        <div className="mw7 mh2 lh-copy serif flex flex-column justify-center f4">
+          <h2 className="f2 lh-title ">{personData.frontmatter.name}</h2>
           <div
-            class="lh-copy serif"
+            className="lh-copy serif"
             dangerouslySetInnerHTML={{ __html: personData.html }}
           />
         </div>
@@ -83,9 +83,6 @@ export const dataQuery = graphql`
             title
             postImage {
               childImageSharp {
-                original {
-                  src
-                }
                 fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
