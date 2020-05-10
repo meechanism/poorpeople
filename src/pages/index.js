@@ -24,6 +24,7 @@ export default ({ data }) => {
       <div className="flex flex-wrap center mw9 justify-around pb3">
         {data.cards.edges.map(({ node }) => (
           <Card
+            key={node.frontmatter.slug}
             title={node.frontmatter.title}
             image={node.frontmatter.postImage.childImageSharp.fluid}
             to={node.frontmatter.slug}
@@ -31,7 +32,6 @@ export default ({ data }) => {
           />
         ))}
       </div>
-      {/* <Bio /> */}
     </Layout>
   );
 };
