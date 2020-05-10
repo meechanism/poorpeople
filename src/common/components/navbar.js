@@ -46,6 +46,7 @@ const SliderMenu = (props) => {
       </Link>
       {props.extraLinks.map((navLink) => (
         <MultiLink
+          key={navLink.to}
           to={navLink.to}
           className={
             'sans-serif ttu near-white f5 no-underline menu__item mv3 pv2 ph4 ba b--near-white dim hover-yellow' +
@@ -110,10 +111,11 @@ export default class Navbar extends React.Component {
                 <Link
                   to="/"
                   className="sans-serif ttu mid-gray f5 no-underline dn dib-l">
-                  HOME
+                  Home
                 </Link>
                 {data.site.siteMetadata.navbarLinks.map((navLink) => (
                   <MultiLink
+                    key={navLink.to}
                     to={navLink.to}
                     className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover-gold">
                     {navLink.name}
