@@ -6,8 +6,7 @@ import Seo from './seo.js';
 import MetaSeo from '../common/seo';
 import { graphql } from 'gatsby';
 
-
-export default ({location, data }) => {
+export default ({ location, data }) => {
   const {
     category,
     date,
@@ -26,25 +25,21 @@ export default ({location, data }) => {
         date={dateOriginal}
         description={metaDescription}
         author={author}
-        image={data.post.frontmatter.postImage.childImageSharp.original.src} />
-      <MetaSeo
-        title={title}
-        description={metaDescription} />
+      />
+      <MetaSeo title={title} description={metaDescription} />
       <Hero author={author} date={date} category={category} title={title} />
       <Body
         content={content}
         description={metaDescription}
-        image={data.post.frontmatter.postImage.childImageSharp.original.src}
         location={location}
       />
     </Layout>
-  )
-}
-
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
-    post: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    post: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
         date(formatString: "MMM Do, YYYY")
@@ -54,22 +49,12 @@ export const query = graphql`
         title
         metaDescription
         slug
-        postImage {
-          childImageSharp {
-            original {
-              src
-            }
-            fluid(maxWidth: 1080) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
-    date: markdownRemark(frontmatter: {slug: {eq: $slug}}) {
+    date: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         date
       }
     }
   }
-`
+`;
