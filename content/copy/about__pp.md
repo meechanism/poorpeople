@@ -39,6 +39,8 @@ The information and discussions are open to anyone of any social-economic backgr
 
 ## Credits and Resources
 
+Our podcast is hosted at [Anchor](https://anchor.fm/poorpeople).
+
 Most stock image and assets are from various artists on [Pexels](https://pexels.com) and will be given proper credit.
 
 - Alone and Frustrated by [Pixabay](https://www.pexels.com/@pixabay)
