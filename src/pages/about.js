@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../common/layouts';
 import Img from 'gatsby-image';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Seo from '../common/seo';
 import Header from '../common/components/header';
 
-export default ({ props, data }) => {
+export default ({ data }) => {
   const people = data.allMarkdownRemark.edges;
 
   const hosts = people.map((person, i) => {
@@ -34,14 +34,17 @@ export default ({ props, data }) => {
   return (
     <Layout>
       <Seo
-        title={`About ${data.site.siteMetadata.title}`}
+        title={`${data.site.siteMetadata.title}`}
         description={data.markdownRemark.frontmatter.title}
       />
-      <Header>About {data.site.siteMetadata.title}</Header>
+      <Header>{data.site.siteMetadata.title}</Header>
 
       <div className="mv4 center pa3 w-70-l w-100">
         <p className="f2-l display tc fw1 db lh-copy f3">
           {data.markdownRemark.frontmatter.title}
+        </p>
+        <p className="f4-l display tc fw1 db lh-copy f5">
+          And a place to safely rant.
         </p>
       </div>
 

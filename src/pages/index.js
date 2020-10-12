@@ -8,6 +8,8 @@ import Seo from '../common/seo';
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
+
+  console.log('*data: ', data);
   return (
     <Layout>
       <Seo
@@ -38,6 +40,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    logo: file(relativePath: { eq: "./img/logo-white.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
     featuredPost: allMarkdownRemark(
       limit: 1
       sort: { order: DESC, fields: frontmatter___date }
@@ -61,10 +71,9 @@ export const query = graphql`
       }
     }
     cards: allMarkdownRemark(
-      skip: 1
       limit: 3
       sort: { order: DESC, fields: frontmatter___date }
-      filter: { frontmatter: { type: { eq: "post" } } }
+      filter: { frontmatter: { type: { eq: "episode" } } }
     ) {
       edges {
         node {

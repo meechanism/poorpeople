@@ -108,11 +108,6 @@ export default class Navbar extends React.Component {
                   className="display ttu tracked dark-gray f4 no-underline">
                   {data.site.siteMetadata.siteTitle}
                 </Link>
-                <Link
-                  to="/"
-                  className="sans-serif ttu mid-gray f5 no-underline dn dib-l">
-                  Home
-                </Link>
                 {data.site.siteMetadata.navbarLinks.map((navLink) => (
                   <MultiLink
                     key={navLink.to}

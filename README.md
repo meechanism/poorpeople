@@ -50,7 +50,16 @@ You can write your post here using markdown! Link to images in the `img` folder 
 
 Images for posts are stored in `content/posts/img/`. Images in the frontmatter will be used as thumbnails for the articles, as well as in search results.
 
-# Credits and Resourxes
+## Content Directories
+
+- `/content/episodes`: meant for containing pages for episodes
+- `/content/posts`: blog-like content for non-episode notes and updates for project
+
+## Templates
+
+These are specifically used with the Gatsby API to create pages. The name is not a React construct.
+
+# Credits and Resources
 
 - [GatsbyJS](https://www.gatsbyjs.org/) team for creating an amazing platform.
 - [Netlify](https://www.netlify.com/) for making static site hosting even easier.

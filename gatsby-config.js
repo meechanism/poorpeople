@@ -1,56 +1,58 @@
+const SUMMARY =
+  'Poor People is a platform for people of color to share stories stemming from their socioeconomic backgrounds.';
+
 module.exports = {
   siteMetadata: {
     navbarLinks: [
-      { to: "/about", name: "about" },
-      { to: "/episodes", name: "episodes" },
-      { to: "/contact", name: "contact" },
+      { to: '/about', name: 'about' },
+      { to: '/episodes', name: 'episodes' },
+      { to: '/blog', name: 'blog' },
+      { to: '/contact', name: 'contact' }
     ],
-    title: "Poor People",
-    description:
-      "Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.",
-    siteUrl: "https://poor-people.netlify.com",
-    homepageHeader: "Poor People Podcast",
-    homepageAbout:
-      "Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.",
+    title: 'Poor People',
+    description: SUMMARY,
+    siteUrl: 'https://poor-people.netlify.com',
+    homepageHeader: 'Poor People Podcast',
+    homepageAbout: SUMMARY,
     mailChimpUrl:
-      "https://gmail.us4.list-manage.com/subscribe/post?u=1d6dfdbdc85da3734b4c7a9ec&amp;id=322edcc0bc",
-    mailChimpToken: "b_1d6dfdbdc85da3734b4c7a9ec_322edcc0bc",
-    youtube: "https://www.youtube.com/channel/UC3f4S1vWhbjSJNU2w6wKRRg", // YOUR YOUTUBE PROFILE HERE
-    github: "", // YOUR GITHUB PROFILE HERE
-    pinterest: "https://www.pinterest.com/poorpeoplepodcast", // YOUR PINTEREST PROFILE HERE
-    instagram: "https://www.instagram.com/poorpeoplepodcast", // YOUR IG PROFILE HERE
-    facebook: "https://www.facebook.com/poorpeoplepodcast", // YOUR FACEBOOK PROFILE HERE
-    twitter: "https://twitter.com/PoorPeoplePod", // YOUR TWITTER PROFILE HERE
-    anchor: "https://anchor.fm/poorpeople",
+      'https://gmail.us4.list-manage.com/subscribe/post?u=1d6dfdbdc85da3734b4c7a9ec&amp;id=322edcc0bc',
+    mailChimpToken: 'b_1d6dfdbdc85da3734b4c7a9ec_322edcc0bc',
+    youtube: 'https://www.youtube.com/channel/UC3f4S1vWhbjSJNU2w6wKRRg', // YOUR YOUTUBE PROFILE HERE
+    github: '', // YOUR GITHUB PROFILE HERE
+    pinterest: 'https://www.pinterest.com/poorpeoplepodcast', // YOUR PINTEREST PROFILE HERE
+    instagram: 'https://www.instagram.com/poorpeoplepodcast', // YOUR IG PROFILE HERE
+    facebook: 'https://www.facebook.com/poorpeoplepodcast', // YOUR FACEBOOK PROFILE HERE
+    twitter: 'https://twitter.com/PoorPeoplePod', // YOUR TWITTER PROFILE HERE
+    anchor: 'https://anchor.fm/poorpeople'
   },
   plugins: [
-    "gatsby-plugin-sitemap",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
+    'gatsby-plugin-sitemap',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          "gatsby-remark-copy-linked-files",
+          'gatsby-remark-copy-linked-files',
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1400,
-            },
-          },
-        ],
-      },
+              maxWidth: 1400
+            }
+          }
+        ]
+      }
     },
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content`,
-        name: "content",
-      },
+        name: 'content'
+      }
     },
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         query: `
         {
@@ -73,7 +75,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
                 });
               });
             },
@@ -82,7 +84,7 @@ module.exports = {
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
-                filter: {frontmatter: {type: {eq: "post"}}}
+                filter: {frontmatter: {type: {eq: "episode"}}}
               ) {
                 edges {
                   node {
@@ -98,30 +100,30 @@ module.exports = {
               }
             }
           `,
-            output: "/rss.xml",
-            title: "Gatsby RSS Feed",
-          },
-        ],
-      },
+            output: '/rss.xml',
+            title: 'Gatsby RSS Feed'
+          }
+        ]
+      }
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ["Karla", "Playfair Display", "Lora"],
-        },
-      },
+          families: ['Karla', 'Playfair Display', 'Lora']
+        }
+      }
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "",
+        trackingId: '',
         head: false,
         anonymize: true,
         respectDNT: true,
-        exclude: ["/success"],
-        cookieDomain: "tyra-starter.netlify.com",
-      },
-    },
-  ],
+        exclude: ['/success'],
+        cookieDomain: 'tyra-starter.netlify.com'
+      }
+    }
+  ]
 };
