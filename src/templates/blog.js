@@ -12,7 +12,6 @@ const TITLE = 'Blog Posts';
 
 export default class BlogList extends React.Component {
   render() {
-    console.log('*this.props: ', this.props);
     const posts = this.props.data.posts.edges;
     const hasNext = this.props.data.posts.pageInfo.hasNextPage;
     return (

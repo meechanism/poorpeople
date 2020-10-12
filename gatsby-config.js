@@ -1,5 +1,5 @@
 const SUMMARY =
-  'Poor People is a platform for people of color to share stories stemming from their socioeconomic backgrounds.';
+  'Poor People is a platform for people of color to share stories stemming from their socioeconomic backgrounds and immigrant experience.';
 
 module.exports = {
   siteMetadata: {

@@ -1,6 +1,7 @@
 import React from 'react';
-import Layout from '../common/layouts';
 import { graphql } from 'gatsby';
+
+import Layout from '../common/layouts';
 import Hero from '../homepage/components/hero';
 import Card from '../homepage/components/card';
 import About from '../homepage/components/about';
@@ -8,8 +9,6 @@ import Seo from '../common/seo';
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
-
-  console.log('*data: ', data);
   return (
     <Layout>
       <Seo
@@ -40,14 +39,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    logo: file(relativePath: { eq: "./img/logo-white.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 250) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
     featuredPost: allMarkdownRemark(
       limit: 1
       sort: { order: DESC, fields: frontmatter___date }

@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import 'tachyons';
 
 export default (props) => {
-  console.log('post rpreview: ', props);
   return (
     <Link className="dark-gray no-underline" to={props.slug}>
       <div className="mb4 flex items-center flex-wrap grow">
