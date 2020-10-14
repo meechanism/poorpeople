@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import 'tachyons';
 
 import Layout from '../common/layouts';
-import Breadcrumbs from '../common/components/Breadcrumbs';
+import Breadcrumbs from '../common/components/breadcrumbs';
 import Preview from '../common/components/post-preview';
 import Seo from '../common/seo';
 
