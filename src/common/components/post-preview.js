@@ -18,10 +18,17 @@ export default (props) => {
             <div className="db f6 silver ttu tracked sans-serif">
               {props.date}
             </div>
-            <div className="db f6 silver ttu tracked sans-serif">
-              TAGGED: {props.tag}
-              {props.topic}
-            </div>
+            {props.tag && (
+              <div className="db f6 silver ttu tracked sans-serif">
+                TAGGED: {props.tag}
+              </div>
+            )}
+            {props.topic && (
+              <div className="db f6 silver ttu tracked sans-serif">
+                TOPIC: {props.topic}
+                {props.topic}
+              </div>
+            )}
           </div>
           <div className="serif f4 lh-copy">{props.description}</div>
         </div>

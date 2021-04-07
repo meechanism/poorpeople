@@ -44,7 +44,7 @@ export default ({ data }) => {
           {data.markdownRemark.frontmatter.title}
         </p>
         <p className="f4-l display tc fw1 db lh-copy f5">
-          And a place to safely rant.
+          And a place to safely rant about how that affects our thoughts today.
         </p>
       </div>
 

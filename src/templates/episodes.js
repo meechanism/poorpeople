@@ -75,6 +75,7 @@ export const episodeListQuery = graphql`
             category
             metaDescription
             slug
+            topic
             postImage {
               childImageSharp {
                 fluid(maxWidth: 1080, maxHeight: 512) {

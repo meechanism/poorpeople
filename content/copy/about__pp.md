@@ -1,7 +1,7 @@
 ---
 type: 'copy'
 name: 'about__pp'
-title: 'Poor People is a platform for people of color to discuss their socioeconomic backgrounds and to share stories and financial experiences of today.'
+title: 'Stories about our immigrant experience and being raised with bare necessities.'
 ---
 
 ![Frustrated and alone](./img/alone.jpg)
@@ -36,6 +36,15 @@ Our conversations attempt to extract and discuss a lot of these questions that h
 ## Audience
 
 The information and discussions are open to anyone of any social-economic background, race, and ethnicity. Even if we discuss our topics with a POC point of view, we attempt to keep dialog and solutions as thoughtful as possible.
+
+## The Name
+
+The "Poor People" name has two meanings:
+
+- a sentiment to how both our families got by with very little
+- a reflection of our former selves lacking knowledge that would have proven helpful as adults
+
+We joke by saying "poor young Mee and Jackie didn't know better". Hopefully we know better now, or know which questions to ask and where to search for answers!
 
 ## Credits and Resources
 
